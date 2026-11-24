@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー - Comugi</title>
+</head>
+<body>
+<main style="max-width:40em;margin:2em auto;padding:0 1em;line-height:1.7;font-family:sans-serif">
+<p><a href="./">Comugi のホーム</a></p>
+<h1>Comugi プライバシーポリシー</h1>
+<p>施行日: 2026年11月24日</p>
+
+<p>Comugi（以下「本アプリ」）は、Android 用のアプリです。本アプリが扱うデータ、その使い方、保存の場所、送り先を、以下に示します。</p>
+
+<h2>1. 要点</h2>
+<ul>
+<li>本アプリは、自前のサーバーを持ちません。開発者が、利用者のデータを受け取ることはありません。</li>
+<li>データの送り先は、GitHub の API（api.github.com、github.com）と、Google の API（Google カレンダー、Google のサインイン・トークンの API）だけです。</li>
+<li>利用状況の解析、広告、クラッシュ報告の仕組みは、組み込んでいません。</li>
+<li>取得したデータは、利用者の端末の中に保存します。</li>
+</ul>
+
+<h2>2. 扱うデータ、目的、保存の場所、送り先</h2>
+
+<h3>GitHub のデータ</h3>
+<table border="1" cellpadding="6" style="border-collapse:collapse">
+<tr><th>データ</th><th>使う目的</th><th>端末の中の保存先</th><th>送り先</th></tr>
+<tr><td>GitHub のアクセストークン（サインインで発行。権限は repo・project）</td><td>GitHub の API を呼ぶ</td><td>端末の暗号化された保存領域（Android の SecureStorage）</td><td>GitHub（api.github.com、サインイン時は github.com）だけ</td></tr>
+<tr><td>Issue（題・本文・状態・期限日など）、Projects のフィールドの値</td><td>一覧・カレンダー・カンバンでの表示、編集、通知、ウィジェット</td><td>アプリ専用のファイル（アプリ専用の領域）</td><td>GitHub に、読み取りと、利用者が行った編集の書き込み</td></tr>
+<tr><td>リポジトリのファイル</td><td>アプリでの表示と編集</td><td>編集の最中の内容は、アプリの画面の中だけ</td><td>GitHub に、読み取りと、利用者が行った編集の書き込み</td></tr>
+<tr><td>利用者が選んだリポジトリ・Project の指定</td><td>どのデータを表示するかの設定</td><td>アプリの設定（Preferences）</td><td>送りません</td></tr>
+</table>
+
+<h3>Google のデータ（Google アカウントを追加した場合だけ）</h3>
+<table border="1" cellpadding="6" style="border-collapse:collapse">
+<tr><th>データ</th><th>使う目的</th><th>端末の中の保存先</th><th>送り先</th></tr>
+<tr><td>Google アカウントのメールアドレス、アクセストークン、リフレッシュトークン</td><td>Google カレンダーの読み取り。アカウントの区別</td><td>端末の暗号化された保存領域（SecureStorage）</td><td>Google（oauth2.googleapis.com、Google カレンダーの API）だけ</td></tr>
+<tr><td>カレンダーの一覧（名前・色）と、利用者が選んだカレンダーの設定</td><td>どのカレンダーを重ねるかの選択</td><td>アプリの設定（Preferences）</td><td>送りません</td></tr>
+<tr><td>カレンダーの予定（題・日時・場所・説明・主催者・参加者の名前など）</td><td>Issue のカレンダーに重ねて表示。通知。ウィジェット</td><td>アプリ専用のファイル</td><td>Google から読み取るだけ。送りません</td></tr>
+</table>
+<p>本アプリが要求する Google の権限は、読み取り専用の <code>calendar.readonly</code> だけです。予定の作成・変更・削除は、行いません。</p>
+
+<h3>端末の中の、その他のデータ</h3>
+<p>通知の設定と、通知を出した履歴を、アプリ専用のファイルに保存します。これらは、端末の外へ送りません。</p>
+
+<h2>3. 第三者への提供、販売</h2>
+<p>データを、GitHub と Google への、上に示した通信（利用者の操作に必要なもの）以外で、第三者へ提供することも、販売することも、ありません。</p>
+
+<h2>4. Google ユーザーデータの扱い（Limited Use）</h2>
+<p>Comugi による、Google API から受け取った情報の使用と、ほかのアプリへの転送は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API サービスのユーザーデータに関するポリシー</a>（Limited Use の要件を含む）に準拠します。</p>
+<ul>
+<li>Google カレンダーのデータは、本アプリの画面に予定を表示し、通知を出す機能を、利用者に提供するためだけに使います。</li>
+<li>このデータを、広告に使いません。データブローカーなどへ、販売も移転もしません。</li>
+<li>このデータを、利用者に表示する以外の目的で、人が読むことは、ありません（本アプリは、データを受け取るサーバーを持ちません）。</li>
+</ul>
+
+<h2>5. データの削除と、連携の解除</h2>
+<ul>
+<li><b>アプリ内</b>: アプリ内の、GitHub と Google のアカウントの画面から、サインアウトできます。サインアウトで、そのアカウントの、端末に保存されたトークンを消します。</li>
+<li><b>端末の中のデータをすべて消す</b>: 本アプリをアンインストールするか、Android の設定でアプリのデータを削除します。端末の中のデータ（トークン、Issue・予定のファイル、設定）が、すべて消えます。</li>
+<li><b>Google との連携を解除する</b>: Google アカウントの「<a href="https://myaccount.google.com/connections">サードパーティのアプリとサービス</a>」の画面で、Comugi の権限を削除します。</li>
+<li><b>GitHub との連携を解除する</b>: GitHub の Settings の「Applications」で、Comugi の権限を取り消します。</li>
+</ul>
+<p>GitHub と Google にあるデータ（Issue、予定など）は、それぞれのサービスのものです。本アプリは、その保管場所ではありません。</p>
+
+<h2>6. 変更</h2>
+<p>このポリシーを変更するときは、このページを更新し、施行日を改めます。</p>
+
+<h2>7. 問い合わせ</h2>
+<p><a href="https://github.com/kyoji-tanaka/comugi-site/issues">https://github.com/kyoji-tanaka/comugi-site/issues</a></p>
+</main>
+</body>
+</html>
